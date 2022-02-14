@@ -1,0 +1,11 @@
+{
+    "name": "qam-backend",
+    "version": "1.0.0",
+    "author": "Raphael Hagl",
+    "scripts": {
+        "build": "mvn install",
+        "clean": "mvn clean",
+        "start": "",
+        "test": "mvn test"
+    }
+}

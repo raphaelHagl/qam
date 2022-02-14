@@ -1,0 +1,25 @@
+{
+  "name": "qam",
+  "version": "1.0.0",
+  "description": "A comprehensive quality assurance management solution",
+  "repository": {
+    "url": "git@github.com:raphaelHagl/qam.git",
+    "type": "git"
+  },
+  "engines": {
+    "yarn": "1.22.15"
+  },
+  "author": "Raphael Hagl",
+  "license": "MIT",
+  "packageManager": "yarn@3.1.1",
+  "scripts": {
+    "build": "yarn workspaces foreach run build",
+    "clean": "yarn workspaces foreach run clean",
+    "start": "yarn workspaces foreach run start",
+    "test": "yarn workspaces foreach run test"
+  },
+  "workspaces": [
+    "qam-backend",
+    "qam-frontend"
+  ]
+}
