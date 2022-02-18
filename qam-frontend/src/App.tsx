@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { UserFactory } from './UserFactory';
+import { instantiateComponent } from './di-container';
+
 function App() {
   return (
     <div className="App">
@@ -19,6 +22,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <div>
+        {instantiateComponent(new UserFactory())}
+      </div>
     </div>
   );
 }
