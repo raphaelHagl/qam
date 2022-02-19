@@ -1,4 +1,5 @@
-export type MaybeComputed<TValue> = { value: TValue } | (() => TValue | Promise<TValue>);
+// TODO: decide whether to devide synchronous and asynchronous calls
+export type MaybeComputed<TValue> = TValue | (() => TValue | Promise<TValue>);
 
 /**
  * Evaluates the value of the given a {@link MaybeComputed}.
@@ -9,10 +10,10 @@ export type MaybeComputed<TValue> = { value: TValue } | (() => TValue | Promise<
  * 
  */
 export const evaluateMaybeComputed = async <TValue>(maybeComputed: MaybeComputed<TValue>): Promise<TValue> => {
-    if ('value' in maybeComputed) {
-        return maybeComputed.value;
+    if (typeof maybeComputed !== 'function') {
+        return maybeComputed;
     }
 
-    const computationResult = await maybeComputed();
+    const computationResult = await (maybeComputed as (() => TValue | Promise<TValue>))();
     return computationResult;
 };

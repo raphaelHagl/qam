@@ -1,8 +1,6 @@
-import { InstanceFactory } from './di-container';
+import { createUser } from './User';
 
-import { User, UserProps, createUser } from './User';
-
-export class UserFactory implements InstanceFactory<void, UserProps, typeof User> {
-    propsProvider = () => ({ props: { name: 'Paul', age: 21 } });
-    createComponent = () => createUser;
-}
+export const UserComponentFactory = {
+    contextProvider: { props: { name: 'Paul', age: 21 } },
+    createComponent: () => createUser,
+};

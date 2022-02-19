@@ -1,1 +1,1 @@
-export { type InstanceFactory, instantiateComponent } from './instance-factory';
+export { type ComponentInstanceFactory, instantiateComponent } from './react-di-container-adapter/component-instance-factory';

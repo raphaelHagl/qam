@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { UserFactory } from './UserFactory';
+import { UserComponentFactory } from './UserFactory';
 import { instantiateComponent } from './di-container';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
         </a>
       </header>
       <div>
-        {instantiateComponent(new UserFactory())}
+        {instantiateComponent(UserComponentFactory)}
       </div>
     </div>
   );
