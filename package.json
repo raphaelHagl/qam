@@ -22,5 +22,8 @@
   "workspaces": [
     "qam-backend",
     "qam-frontend"
-  ]
+  ],
+  "installConfig": {
+    "hoistingLimits": "workspaces"
+  }
 }
